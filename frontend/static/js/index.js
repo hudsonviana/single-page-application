@@ -46,10 +46,10 @@ const router = async () => {
     };
   }
 
-  // Active links
+  // Set active link class
   const mainRoutePath = (routePath) => {
-    let secondSlash = routePath.indexOf('/', routePath.indexOf('/') + 1);
-    return routePath.substring(0, secondSlash !== -1 ? secondSlash : routePath.length);
+    const colonPosition = routePath.indexOf(':');
+    return routePath.substring(0, colonPosition !== -1 ? colonPosition - 1 : routePath.length);
   };
 
   const links = [...document.querySelectorAll('nav a')];
@@ -61,7 +61,6 @@ const router = async () => {
 
   // Render View
   const view = new match.route.view(getParams(match));
-
   document.querySelector('#app').innerHTML = await view.getHtml();
 };
 

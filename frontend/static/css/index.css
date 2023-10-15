@@ -19,7 +19,7 @@ body {
   padding: 12px 18px;
   text-decoration: none;
   color: #eeeeee;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .navLink:hover {
@@ -41,4 +41,14 @@ a {
   color: #009579;
   text-decoration: none;
   pointer-events: none;
+}
+
+.navLogo {
+  background-color: black;
+  pointer-events: none;
+  display: block;
+  padding: 12px 18px;
+  text-decoration: none;
+  color: #ffff00;
+  font-weight: 600;
 }

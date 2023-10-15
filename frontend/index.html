@@ -4,15 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
-    <link rel="stylesheet" href="/static/css/index.css" />
     <title>Sigle Page App</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
   </head>
   <body>
     <nav class="nav">
-      <a href="/" class="navLink" data-link>Dashboard</a>
-      <a href="/posts" class="navLink" data-link>Posts</a>
-      <a href="/settings" class="navLink" data-link>Settings</a>
+      <a href="#" class="navLogo"> <i class="bi bi-code-slash"></i> &nbsp; System </a>
+      <a href="/" class="navLink" data-link> <i class="bi bi-speedometer"></i> &nbsp; Dashboard </a>
+      <a href="/posts" class="navLink" data-link> <i class="bi bi-postcard"></i> &nbsp; Posts </a>
+      <a href="/settings" class="navLink" data-link> <i class="bi bi-gear"></i> &nbsp; Settings </a>
     </nav>
     <div id="app"></div>
     <script type="module" src="/static/js/index.js"></script>
