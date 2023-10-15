@@ -33,12 +33,12 @@ const router = async () => {
     return {
       route: route,
       result: location.pathname.match(pathToRegex(route.path)),
-      // isMatch: location.pathname === route.path,
     };
   });
 
   let match = potentialMatches.find((potentialMatch) => potentialMatch.result !== null);
 
+  // 404
   if (!match) {
     match = {
       route: routes[0],
@@ -46,11 +46,23 @@ const router = async () => {
     };
   }
 
+  // disabled links
+  const mainRoutePath = (routePath) => {
+    let secondSlash = routePath.indexOf('/', routePath.indexOf('/') + 1);
+    console.log(secondSlash);
+    return routePath.substring(0, secondSlash !== -1 ? secondSlash : routePath.length);
+  };
+
+  const links = [...document.querySelectorAll('nav a')];
+  links.forEach((link) => {
+    if (link.getAttribute('href') === mainRoutePath(match.route.path)) link.classList.add('isDisabled');
+    else link.classList.remove('isDisabled');
+  });
+
+  // Render View
   const view = new match.route.view(getParams(match));
 
   document.querySelector('#app').innerHTML = await view.getHtml();
-
-  // match.route.view();
 };
 
 window.addEventListener('popstate', router);

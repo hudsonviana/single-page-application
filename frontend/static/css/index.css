@@ -35,3 +35,12 @@ body {
 a {
   color: #009579;
 }
+
+.isDisabled {
+  background: rgba(255, 255, 255, 0.05);
+  color: #009579;
+  cursor: not-allowed;
+  text-decoration: none;
+  pointer-events: none;
+  /* opacity: 0.5; */
+}
