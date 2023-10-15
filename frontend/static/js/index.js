@@ -46,16 +46,17 @@ const router = async () => {
     };
   }
 
-  // disabled links
+  // Active links
   const mainRoutePath = (routePath) => {
     let secondSlash = routePath.indexOf('/', routePath.indexOf('/') + 1);
     return routePath.substring(0, secondSlash !== -1 ? secondSlash : routePath.length);
   };
 
   const links = [...document.querySelectorAll('nav a')];
+  const mainPath = mainRoutePath(match.route.path);
+
   links.forEach((link) => {
-    if (link.getAttribute('href') === mainRoutePath(match.route.path)) link.classList.add('isDisabled');
-    else link.classList.remove('isDisabled');
+    link.classList.toggle('activeLink', link.getAttribute('href') === mainPath);
   });
 
   // Render View
