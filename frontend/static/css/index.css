@@ -11,15 +11,15 @@ body {
   left: 0;
   width: var(--nav-width);
   height: 100vh;
-  background: #222;
+  background: #222222;
 }
 
 .nav__link {
   display: block;
   padding: 12px 18px;
   text-decoration: none;
-  columns: #eeeeee;
-  font-weight: 500;
+  color: #eeeeee;
+  font-weight: 600;
 }
 
 .nav__link:hover {
