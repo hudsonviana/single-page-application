@@ -49,7 +49,6 @@ const router = async () => {
   // disabled links
   const mainRoutePath = (routePath) => {
     let secondSlash = routePath.indexOf('/', routePath.indexOf('/') + 1);
-    console.log(secondSlash);
     return routePath.substring(0, secondSlash !== -1 ? secondSlash : routePath.length);
   };
 
